@@ -1,8 +1,10 @@
-import { useState } from "react";
+/* eslint-disable no-unused-vars */
+import { useEffect, useState } from "react";
 import "./App.css";
+import axios from "axios";
 import TaskItem from "./components/TaskItem";
 
-function App() {
+const App = () => {
   const [tasks, setTasks] = useState([
     {
       id: "1",
@@ -16,6 +18,20 @@ function App() {
     },
   ]);
 
+  const fetchTasks = async () => {
+    try {
+      const { data } = await axios.get("http:localhost:8000/tasks");
+      setTasks(data);
+      console.log(data, " resposta do back");
+    } catch (error) {
+      console.log(error, "deu erro");
+    }
+  };
+
+  useEffect(() => {
+    fetchTasks();
+  }, []);
+
   return (
     <>
       {tasks.map((task) => (
@@ -23,6 +39,6 @@ function App() {
       ))}
     </>
   );
-}
+};
 
 export default App;
