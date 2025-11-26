@@ -20,7 +20,7 @@ const App = () => {
 
   const fetchTasks = async () => {
     try {
-      const { data } = await axios.get("http:localhost:8000/tasks");
+      const { data } = await axios.get("http://localhost:8000/tasks");
       setTasks(data);
       console.log(data, " resposta do back");
     } catch (error) {
