@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import TaskItem from "./TaskItem";
 
 const Tasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -27,7 +28,7 @@ const Tasks = () => {
           {tasks
             .filter((tasks) => tasks.isCompleted === false)
             .map((lastTask) => (
-              <p key={lastTask._id}>{lastTask._id}</p>
+              <TaskItem task={lastTask} />
             ))}
         </div>
       </div>
@@ -36,8 +37,8 @@ const Tasks = () => {
         <div className="tasks-list">
           {tasks
             .filter((tasks) => tasks.isCompleted === true)
-            .map((taskCompleted) => (
-              <p key={taskCompleted._id}>{taskCompleted._id}</p>
+            .map((completedTask) => (
+              <TaskItem task={completedTask} />
             ))}
         </div>
       </div>
