@@ -1,9 +1,23 @@
 const TaskItem = ({ task }) => {
   return (
-    <>
-      <h1>{task._id}</h1>;
-      <h1>{task.isCompleted ? "completo" : "incompleto"}</h1>;
-    </>
+    <div className="task-item-container">
+      <div className="task-description">
+        <label
+          className={
+            task.isCompleted
+              ? "checkbox-container-completed"
+              : "checkox-container"
+          }
+        >
+          {task._id}
+          <input type="checkbox" defaultChecked={task.isCompleted} />
+          <span
+            className={task.isCompleted ? "checkmark completed" : "checkmark"}
+          ></span>
+        </label>
+      </div>
+      .
+    </div>
   );
 };
 
