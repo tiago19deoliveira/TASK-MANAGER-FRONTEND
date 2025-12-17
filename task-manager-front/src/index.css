@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  font-family: "Archivo", sans-serif;
+  background: linear-gradient(259.93deg, #000000 -41.68%, #00171f 146.65%);
+  color: white;
+}/*# sourceMappingURL=index.css.map */
