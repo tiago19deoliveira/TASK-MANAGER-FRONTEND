@@ -17,7 +17,7 @@
   }
 
   .checkbox-container {
-    display: flex;
+    display: block;
     position: relative;
     padding-left: 30px;
     margin-bottom: 25px;
@@ -55,6 +55,10 @@
   }
 
   .checkbox-container:hover input ~ .checkmark {
+    background-color: #fff;
+  }
+
+  .checkbox-container input:checked ~ .checkmark {
     background: linear-gradient(262.71deg, #00d1ff -30.04%, #00ffa3 124.74%);
   }
 
@@ -68,5 +72,21 @@
     content: "";
     position: absolute;
     display: none;
+  }
+
+  .checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkbox-container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 3px;
+    height: 7px;
+    border: solid white;
+    border-color: #fff;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
   }
 }
