@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import TaskItem from "./TaskItem";
 import "./tasks.scss";
+import AddTask from "./addTask";
 
 const Tasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -25,6 +26,7 @@ const Tasks = () => {
       <h2>Minhas Tarefas</h2>
       <div className="last-tasks">
         <h3>Últimas Tarefas</h3>
+        <AddTask />
         <div className="tasks-list">
           {tasks
             .filter((tasks) => tasks.isCompleted === false)
