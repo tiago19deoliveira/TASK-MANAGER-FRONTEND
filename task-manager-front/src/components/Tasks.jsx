@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import TaskItem from "./TaskItem";
+import "./tasks.scss";
 
 const Tasks = () => {
   const [tasks, setTasks] = useState([]);
