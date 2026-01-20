@@ -13,7 +13,7 @@ const TaskItem = ({ task }) => {
               : "checkox-container"
           }
         >
-          {task._id}
+          {task.description}
           <input type="checkbox" defaultChecked={task.isCompleted} />
           <span
             className={task.isCompleted ? "checkmark completed" : "checkmark"}

@@ -9,14 +9,19 @@ import "./addTask.scss";
 const AddTask = () => {
   const [task, setTask] = useState("");
   const onChange = (e) => {
-    setTask(e.task.value);
+    setTask(e.target.value);
   };
 
   const handleTaskAddition = async () => {
     try {
-      if (task.length === 0) {
-        return toast.error("Não foi possível adicionar uma tarefa");
-      }
+      // if (task.length === 0) {
+      //   return toast.error("Não foi possível adicionar uma tarefa");
+      // }
+
+      await axios.post("http://localhost:8000/tasks", {
+        description: task,
+        isCompleted: false,
+      });
     } catch (error) {
       console.log(error, ": erro de chamada de tarefas");
     }
