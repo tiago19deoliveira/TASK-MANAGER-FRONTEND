@@ -3,11 +3,18 @@ import CustomButton from "./customButton";
 import "./addTask.scss";
 import { useState } from "react";
 import { FaPlus } from "react-icons/fa6";
+import axios from "axios";
 
 const AddTask = () => {
   const [task, setTask] = useState("");
   const onChange = (e) => {
     setTask(e.task.value);
+  };
+
+  const handleTaskAddition = async () => {
+    try {
+      const response = axios.post();
+    } catch (error) {}
   };
 
   return (
