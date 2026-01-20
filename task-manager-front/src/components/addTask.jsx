@@ -1,9 +1,10 @@
 import CustomInput from "./customInput";
 import CustomButton from "./customButton";
-import "./addTask.scss";
 import { useState } from "react";
 import { FaPlus } from "react-icons/fa6";
+import { toast } from "react-toastify";
 import axios from "axios";
+import "./addTask.scss";
 
 const AddTask = () => {
   const [task, setTask] = useState("");
@@ -13,14 +14,18 @@ const AddTask = () => {
 
   const handleTaskAddition = async () => {
     try {
-      const response = axios.post();
-    } catch (error) {}
+      if (task.length === 0) {
+        return toast.error("Não foi possível adicionar uma tarefa");
+      }
+    } catch (error) {
+      console.log(error, ": erro de chamada de tarefas");
+    }
   };
 
   return (
     <div className="add-task-container">
       <CustomInput label="Adicionar..." value={task} onChange={onChange} />
-      <CustomButton>
+      <CustomButton onClick={handleTaskAddition}>
         <FaPlus size={14} color="#ffff" />
       </CustomButton>
     </div>
