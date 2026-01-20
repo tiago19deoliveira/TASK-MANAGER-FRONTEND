@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import "./addTask.scss";
 
-const AddTask = () => {
+const AddTask = ({ fetchTasks }) => {
   const [task, setTask] = useState("");
   const onChange = (e) => {
     setTask(e.target.value);
@@ -22,6 +22,8 @@ const AddTask = () => {
         description: task,
         isCompleted: false,
       });
+      await fetchTasks();
+      setTask("");
     } catch (error) {
       console.log(error, ": erro de chamada de tarefas");
     }
