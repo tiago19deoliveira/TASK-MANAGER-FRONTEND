@@ -2,7 +2,6 @@ import CustomInput from "./customInput";
 import CustomButton from "./customButton";
 import { useState } from "react";
 import { FaPlus } from "react-icons/fa6";
-import { toast } from "react-toastify";
 import axios from "axios";
 import "./addTask.scss";
 
